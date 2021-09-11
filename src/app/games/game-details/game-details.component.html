@@ -1,0 +1,28 @@
+
+<div class="row vh-100" *ngIf="this.router.url.indexOf('edit') === -1">
+
+    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+    <img id="gameImage"  class="center" src="{{ game.gameImage }}"
+     alt="{{ game.gameName }}" width="300" height="400">
+    </div>
+    
+    
+    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+    <h3><strong>{{ game.gameName }}</strong></h3><br>
+    <p><strong>Platform: </strong> {{ game.gamePlatform }}</p><br>
+    <p><strong>Description: </strong> {{ game.gameDescription }} </p><br>
+    <p><strong>Year Released: </strong> {{ game.gameYear }}</p><br>
+    <p><strong>Game Status: </strong> {{ game.gameStatus }}</p><br>
+    <br>
+    <br>
+    <div class="buttonBox">
+        <button class="btn btn-primary playListBtns"  routerLink="edit">Edit</button>
+        <button class="btn btn-success playListBtns" (click)="addToPlaylist()" *ngIf="game.gameStatus === 'Library'">Add To Playlist</button>
+        <button class="btn btn-success playListBtns" (click)="markAsUnCompleted()" *ngIf="game.gameStatus === 'Completed'">Mark as Uncompleted</button>
+        <button class="btn btn-success playListBtns" (click)="markAsCompleted()" *ngIf="game.gameStatus === 'Playlist'">Mark as Completed</button>
+        <button class="btn btn-danger playListBtns" (click)="deleteGame()"> Delete</button>
+      </div>
+        </div>
+    </div>
+    
+    <router-outlet></router-outlet>

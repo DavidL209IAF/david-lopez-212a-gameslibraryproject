@@ -1,0 +1,15 @@
+.buttonBox{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+
+.playListBtns{
+    font-size: 20px;
+    margin: 15px;
+}
+
+#gameImage{
+    margin-left: 100px;
+}

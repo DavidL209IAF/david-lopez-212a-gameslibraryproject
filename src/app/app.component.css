@@ -1,0 +1,46 @@
+.mainContainer{
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
+    min-width: 312px;
+}
+
+#loginButton, #logoutButton{
+    margin-right: 10px;
+}
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+.centerCol{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.centerColRow{
+    display: flex;
+    justify-content: center;
+}
+
+#navMenuButton{
+    margin-left: 15px;
+}
+
+#notLoggedInHeader{
+    text-align: center;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+  }
+
+nav {
+    min-width: 312px;
+}
+

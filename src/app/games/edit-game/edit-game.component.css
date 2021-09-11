@@ -1,0 +1,44 @@
+.buttonBox{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-evenly ;
+    flex-direction: row;
+}
+
+
+.playListBtns{
+    font-size: 20px;
+    margin: 15px;
+}
+
+#gameImage{
+    margin-left: 100px;
+}
+
+#headerCol{
+    display: flex;
+    justify-content: center;
+}
+
+#headerRow{
+    margin-bottom: -50px;
+}
+
+#imageForm{
+    margin-left: 75px;
+
+}
+#imgCol{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#formCol{
+    margin-top: 100px;
+}
+
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched{
+border: 1px solid red;
+}

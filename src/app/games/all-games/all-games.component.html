@@ -1,0 +1,46 @@
+<div *ngIf="token.accessToken.length !== 0">
+    <div class="row" *ngIf="router.url === '/allgames'" >
+        <div id="headerCol" class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12">
+        <h2>All Games (Total:{{(games|filterGames: '' : selectedPlatform).length}})</h2>
+        </div>
+    
+        <div id="filterCol" class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12">
+        <h3 id="filterHeader">Filter By Platform: </h3>
+                    <div class="filter">
+                        <div id="filterDropDown" ngbDropdown class="d-inline-block">
+                            <button class="btn btn-primary" id="dropdownBasic1" ngbDropdownToggle>{{ selectedPlatform }}</button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem (click)="onFilter('All')">All</button>
+                                <button ngbDropdownItem (click)="onFilter('PC')">PC</button>
+                                <button ngbDropdownItem (click)="onFilter('Nintendo Switch')">Nintendo Switch</button>
+                                <button ngbDropdownItem (click)="onFilter('PS4/PS5')">PS4/PS5</button>
+                                <button ngbDropdownItem (click)="onFilter('Xbox One/Series X')">Xbox One/Series X</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="addButton" class="btn btn-success" routerLink="new">Add Game</button>
+                </div>
+        
+                    <br *ngIf="router.url === '/allgames'">
+                    <br *ngIf="router.url === '/allgames'">
+        
+                    <div class="allPLaylistGames" *ngIf="router.url === '/allgames'">
+                        <div class="gameBoxDiv" *ngFor="let game of games | filterGames: '' : selectedPlatform">
+                            <img  class="center" src="{{ game.gameImage }}" alt="{{ game.gameName }}" width="150" height="200" routerLink="{{ game.gameId }}" title="Click for Game Details">
+                            <br>
+                            <h3>{{ game.gameName }}</h3>
+                            <p>Platform: {{ game.gamePlatform }}</p>
+                            <div class="buttonBox">
+                                <button class="btn btn-primary playListBtns" routerLink="{{ game.gameId }}/edit">Edit</button>
+                                <button *ngIf="game.gameStatus !== 'Playlist'" class="btn btn-success playListBtns" (click)="addToPlaylist(game.gameId)">Add To Playlist</button>
+                                <button *ngIf="game.gameStatus === 'Playlist'" class="btn btn-success playListBtns" disabled>Already On Playlist</button>
+                                <button class="btn btn-danger playListBtns" (click)="deleteGame(game.gameId)">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+    
+               <router-outlet></router-outlet>
+            </div>
+    
+    

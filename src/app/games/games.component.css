@@ -1,0 +1,62 @@
+.gameBoxDiv {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    margin: 15px 15px 5px 0px;
+    padding: 5px;
+    min-width: 250px;
+    width: 10%;
+    background-color: rgb(192, 192, 202);
+}
+
+.allPLaylistGames{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+ 
+}
+.marginPadding10 {
+    margin: 10px 10px 10px 0px;
+    padding: 10px;
+}
+
+img.center {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.buttonBox{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.playListBtns{
+    font-size: 12px;
+    margin: 5px;
+}
+
+#headerCol{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#filterCol{
+    display: flex;
+    justify-content: center;
+
+}
+
+#filterHeader{
+    margin-right: 10px;
+}
+
+#notLoggedInHeader{
+    text-align: center;
+}
+

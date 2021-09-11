@@ -1,0 +1,88 @@
+<div id = "headerRow" class="row">
+    <div id="headerCol" class="col">
+        <h2>Add Game</h2>
+    </div>
+</div>
+
+<div class="row vh-100" >
+    
+    <div id="imgCol" class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        <img id="gameImage"  class="center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBia1eY0wzs-dEbohvyyB29I_RzvDryDn3_guhk1f36UOCHkaXzMT94p5eMHOobRfhCco&usqp=CAU"
+        alt="placeholder Image" width="300" height="400">
+        <br>
+        
+    </div>
+    
+    <div id="formCol" class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        <form #f="ngForm">
+
+            <div class="row mb-3">
+              <label for="gameName" class="col-sm-2 col-form-label">Game Name: </label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="gameName" ngModel name="gameName" required #name="ngModel" >
+                <p *ngIf="!name.valid && name.touched">Please enter a Game Name!</p>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-2">
+                <label for="gameDescription" class="form-label">Game Description</label>
+            </div>
+                <div class="col-sm-8">
+                <textarea class="form-control" id="gameDescription" rows="8" ngModel name="gameDescription"></textarea>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-sm-2">
+                <label for="gameImageURL" class="form-label">Game Image Link: </label>
+            </div>
+                <div class="col-sm-8">
+                <textarea class="form-control" id="gameImageURL" rows="1" ngModel name="gameImageURL"></textarea>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="gameYear" class="col-sm-2 col-form-label">Game Year: </label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="gameYear" ngModel name="gameYear" required #year="ngModel">
+                  <p *ngIf="!year.valid && year.touched">Please enter a year!</p>
+
+                </div>
+              </div>
+
+            <div class="row mb-3">
+              <label for="gamePlatform" class="col-sm-2 col-form-label">Platform: </label>
+              <div class="col-sm-4">
+                <select class="form-select" aria-label="gamePlatform" ngModel name="gamePlatform" required #platform="ngModel">
+                    <option value="Nintendo Switch">Nintendo Switch</option>
+                    <option value="PC">PC</option>
+                    <option value="PS4/PS5">PS4/PS5</option>
+                    <option value="Xbox One/Series X">Xbox One/Series X</option>
+                  </select>
+                  <p *ngIf="!platform.valid && platform.touched">Please select a Platform!</p>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="gameStatus" class="col-sm-2 col-form-label">Status: </label>
+                <div class="col-sm-4">
+                  <select class="form-select" aria-label="gameStatus" ngModel name="gameStatus" required #status="ngModel">
+                      <option value="Playlist">Playlist</option>
+                      <option value="Completed">Completed</option>
+                      <option value="Library">Library</option>
+                    </select>
+                    <p *ngIf="!status.valid && status.touched">Please select a Game Status!</p>
+                </div>
+              </div>
+
+              <div class="buttonBox">
+            <button [disabled]="!f.valid" class="btn btn-success" (click)="onFormSubmit()">Add Game</button>
+            <button class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+          </form>
+
+        </div>
+    </div>
+
+
