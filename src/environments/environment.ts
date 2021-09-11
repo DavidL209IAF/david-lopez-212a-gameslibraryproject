@@ -4,7 +4,7 @@
 
 export const environment = {
   production: true,
-  URL: "http://172.31.9.219:3307"
+  URL: "http://apiip" //replace with api IP
 }
 
 /*
