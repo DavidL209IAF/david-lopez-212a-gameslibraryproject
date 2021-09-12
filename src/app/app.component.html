@@ -48,7 +48,7 @@
           </form>
         </div>
         <div class="modal-footer centerColRow">
-          <button [disabled]="!f.valid" class="btn btn-success" (click)="submitLogin(content, f)">Submit</button>
+          <button [disabled]="!f.valid" class="btn btn-success" (click)="submitLogin(content, f)">Log In</button>
           <button class="btn btn-danger"  (click)="modal.dismiss()">Cancel</button>
         </div>
       </ng-template>
@@ -76,7 +76,7 @@
           </form>
         </div>
         <div class="modal-footer centerColRow">
-          <button [disabled]="!f1.valid" class="btn btn-success" (click)="submitSignUp(content1, f1)">Log In</button>
+          <button [disabled]="!f1.valid" class="btn btn-success" (click)="submitSignUp(content1, f1)">Sign Up</button>
           <button class="btn btn-danger"  (click)="modal.dismiss()">Cancel</button>
         </div>
       </ng-template>
